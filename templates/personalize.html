@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personalize Summary</title>
+</head>
+<body>
+    <h1>Personalize Summary for "{{ title }}"</h1>
+    
+    <!-- Hidden element to store article_id -->
+    <div id="articleData" data-article-id="{{ article_id }}"></div>
+
+    <form id="personalizeForm">
+        <label for="summary_type">Choose Summary Type:</label>
+        <select id="summary_type" name="summary_type">
+            <option value="extractive">Extractive</option>
+            <option value="abstractive">Abstractive</option>
+            <option value="hybrid">Hybrid</option>
+        </select>
+        <label for="summary_size">Choose Summary Size (%):</label>
+        <input type="number" id="summary_size" name="summary_size" min="10" max="100" step="10" value="20">
+        <button type="button" id="generateSummary">Generate Summary</button>
+    </form>
+    <div id="summaryOutput"></div>
+
+    <!-- Include external JS -->
+    <script src="/static/personalize.js"></script>
+</body>
+</html>
